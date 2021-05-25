@@ -66,6 +66,7 @@ next,
 before any iteration, we will take all the odd indices and reduce them to the sum of their ascii codes
 such as
 `ascii_sum = [ord(x) for odd x in INPUT_STRING]`
+
 `let OUT = ""`
 now
 
@@ -96,7 +97,8 @@ if `i` is even we will wait (first iteration, we only process odd indices as the
 
 if `i` is odd:
 `let NUM = SOURCE_LIST.indexOf(i) + (seed * ascii_sum * (index + 1))`
-`quotient,remainder = divmod(NUM,LENGTH(DICTIONARY)) OUT+=SHIFT_LIST_BY(quotient,DICTIONARY)[remainder]`
+`quotient,remainder = divmod(NUM,LENGTH(DICTIONARY))`
+ `OUT+=SHIFT_LIST_BY(quotient,DICTIONARY)[remainder]`
 again, we will add the quotient to our list of indices
 
 now that we have our seed, indices and encrypted chunk, we pack the data
