@@ -26,6 +26,7 @@ $ python encode.py
 ```
 
 Let's fix it a little
+![image](https://user-images.githubusercontent.com/29981503/119570218-7099b900-bdcd-11eb-9226-480d308a9e8a.png)
 
 I think that might clear things up.
 
