@@ -109,3 +109,8 @@ now that we have our seed, indices and encrypted chunk, we pack the data
 ```
 
 now that you know what happens under the hood..go reverse it
+
+
+## What is 0x4a70?
+
+Just a random constant...4a70 looks like halo so..
