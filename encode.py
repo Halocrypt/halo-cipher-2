@@ -17,7 +17,7 @@ def _pack(seed, buffer):
             ((f"{seed}")),
             "(0x4a70)ES>",
             "<I(0x4a70):",
-            *((b64e(pack("l", i[0])) + b",").decode() for i in buffer),
+            ",".join(f"{i[0]}" for i in buffer),
             "(0x4a70)EI>",
             "<D(0x4a70):",
             (("".join(x[1] for x in buffer))),
@@ -53,3 +53,7 @@ def encode(plain_text):
             DICTIONARY, ascii_letters.index(token) + (seed * ascii_sum * (index + 1))
         )
     return _pack(seed, buffer)
+
+
+if __name__ == "__main__":
+    print(encode(input("Plain Text:\n")))

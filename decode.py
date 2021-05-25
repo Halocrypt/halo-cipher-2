@@ -33,9 +33,7 @@ class CipherTextParser(object):
         # the metadata
         seed = int(match.group("seed"))
         _indices = match.group("indices")
-        indices = [
-            unpack("l", b64d(x))[0] for x in [_i for _i in _indices.split(",") if _i]
-        ]
+        indices = [int(_i) for _i in _indices.split(",") if _i]
         # the ACTUAL cipher
 
         encrypted_chunk = match.group("encrypted_chunk")
@@ -44,6 +42,7 @@ class CipherTextParser(object):
     def _get_orig_ascii(self, indices, index, token):
         q = indices[index]
         mod = shift_array(self.dictionary, q).index(token)
+        print(mod, q)
         orig = q * len(self.dictionary) + mod
         return orig
 
@@ -59,8 +58,8 @@ class CipherTextParser(object):
                 continue
             if index % 2:
                 orig = self._get_orig_ascii(indices, index, token)
-
                 ascii_index = int(orig - (seed * (index + 1)))
+                print(orig, seed, index, ascii_index, token)
                 tmp = ascii_letters[ascii_index]
                 buffer.append(tmp)
                 bucket.append(tmp)
@@ -84,3 +83,7 @@ class CipherTextParser(object):
 def decode(cipher_text, dictionary=DICTIONARY):
     klass = CipherTextParser(cipher_text, dictionary)
     return klass.decode()
+
+
+if __name__ == "__main__":
+    print(decode(input("Cipher Text:\n")))
