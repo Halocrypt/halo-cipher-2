@@ -12,11 +12,15 @@ With that said, let's get started
 
 ## What does it encode
 
-Whatever the mapping you supply to it..but usually you will encounter ASCII Letters only (rest will be passed as it is) (...usually)
+Whatever the mapping you supply to it..but usually you will encounter ASCII Letters only (rest will be passed as it is) (...usually) 
+
 
 ## How..
 
-1 thing to keep in mind is, a string CANNOT be encoded with the same VALID_CHARS twice..the behaviour is undefined
+1 thing to keep in mind is, a string CANNOT be encoded with the same VALID_CHARS twice..the behaviour is undefined. 
+
+(What that means is, you cannot encode an already encoded string.)
+
 Let's see what happens under the hood
 
 ```bash
@@ -25,14 +29,16 @@ $ python encode.py
 <S(0x4a70):126(0x4a70)ES><I(0x4a70):4001,4,12003,0,20005,14,28007,19,36010,0,44012,28,52014,33,60016,0,68018,43,76021,0,84023,52,92025,57,100027,0,108029,66,116031,71,0,76,132036,80,0,85,148040,90,156043,0,164044,100,172047(0x4a70)EI><D(0x4a70):😈🏓Ζ Μइइ😤Ι 🙊Μ🤣Ξ💔 ΡΛ🕶 🏓😤ΞΟ🧠 ΦडढΩ ΗΗ🧠 थ💔🤒Τ 🌏αΗ(0x4a70)ED>
 ```
 
-Let's fix it a little
+Let's fix it a little.
+
+
 ![image](https://user-images.githubusercontent.com/29981503/119570218-7099b900-bdcd-11eb-9226-480d308a9e8a.png)
 
 I think that might clear things up.
 
 To sum up
 
-**Each HaloCipher Text has 4 parts**
+**Each HaloCipher Text has 3 parts**
 each part is of the format
 <{FORMAT_ID}(0x4a70):{CONTENT}<E{FORMAT_ID>
 Where FORMAT_ID could be `S` or `I` or `D`
