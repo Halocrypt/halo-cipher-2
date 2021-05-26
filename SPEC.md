@@ -99,9 +99,7 @@ where SHIFT_LIST_BY rotates the list by `quotient` places
 
 we will store the quotient in another list called `INDICES` (FORMAT_ID = I )`
 
-if `i` is even we will wait (first iteration, we only process odd indices as the output of even indices depends directly on the odd )
-
-if `i` is odd:
+if `i` is even:
 `let NUM = SOURCE_LIST.indexOf(i) + (seed * ascii_sum * (index + 1))`
 `quotient,remainder = divmod(NUM,LENGTH(DICTIONARY))`
  `OUT+=SHIFT_LIST_BY(quotient,DICTIONARY)[remainder]`
