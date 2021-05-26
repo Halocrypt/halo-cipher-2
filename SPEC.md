@@ -71,7 +71,7 @@ if the character is not in our SOURCE_LIST (usually ascii_letters), we will retu
 next,
 before any iteration, we will take all the odd indices and reduce them to the sum of their ascii codes
 such as
-`ascii_sum = [ord(x) for odd x in INPUT_STRING]`
+`ascii_sum = sum([ord(x) for odd x in INPUT_STRING])`
 
 `let OUT = ""`
 now
