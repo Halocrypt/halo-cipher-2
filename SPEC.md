@@ -66,6 +66,13 @@ important to note that our internal implementation of `f(x)` is NOT pure (idempo
 `let x = INPUT STRING`
 the core element now is the `DICTIONARY` and the `SOURCE_LIST`, it is just the list of characters you want to substitute the input with.
 
+For our implementation of HaloCipher:
+
+```
+SOURCE_LIST=ascii_letters
+DICTIONARY = "ΗΘअΚΞ🤣🤒ॠΝΠथ🤡αΛΟ💔ΩΜΡ😐इ🧠भΓΣऐΧΥΦढפּΙद🙊ΒΨ😤ड🐶🌏🍋Δ🏓💪Ε🕶ΖאΤ🤩😈ग"
+```
+
 for each element of x, we will take the character and the index.
 if the character is not in our SOURCE_LIST (usually ascii_letters), we will return it as it is (**spaces are usually not encoded by halocipher**)
 next,
@@ -122,3 +129,4 @@ now that you know what happens under the hood..go reverse it
 ## What is 0x4a70?
 
 Just a random constant...4a70 looks like halo so..
+
