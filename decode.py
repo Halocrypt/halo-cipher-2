@@ -46,7 +46,6 @@ class CipherTextParser(object):
     def _get_orig_ascii(self, indices, index, token):
         q = indices[index]
         mod = shift_array(self.dictionary, q).index(token)
-        print(mod, q)
         orig = q * len(self.dictionary) + mod
         return orig
 
@@ -63,7 +62,6 @@ class CipherTextParser(object):
             if index % 2:
                 orig = self._get_orig_ascii(indices, index, token)
                 ascii_index = int(orig - (seed * (index + 1)))
-                print(orig, seed, index, ascii_index, token)
                 tmp = ascii_letters[ascii_index]
                 buffer.append(tmp)
                 bucket.append(tmp)
