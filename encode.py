@@ -1,13 +1,20 @@
 from random import randint
 from string import ascii_letters
-from struct import pack
-from util import (
-    DICTIONARY,
-    b64e,
-    get_rotating_indice,
-    predictable_seed,
-    sum_ascii_codes,
-)
+
+try:
+    from .util import (
+        DICTIONARY,
+        get_rotating_indice,
+        predictable_seed,
+        sum_ascii_codes,
+    )
+except ImportError:
+    from util import (
+        DICTIONARY,
+        get_rotating_indice,
+        predictable_seed,
+        sum_ascii_codes,
+    )
 
 
 def _pack(seed, buffer):

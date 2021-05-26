@@ -1,7 +1,11 @@
+from re import UNICODE
+from re import compile as re_compile
 from string import ascii_letters
-from util import DICTIONARY, b64d, shift_array, sum_ascii_codes
-from re import compile as re_compile, UNICODE
-from struct import unpack
+
+try:
+    from .util import DICTIONARY, b64d, shift_array, sum_ascii_codes
+except ImportError:
+    from util import DICTIONARY, b64d, shift_array, sum_ascii_codes
 
 
 class CipherTextParser(object):

@@ -61,7 +61,7 @@ I will be telling you how you can encode a string in halo cipher.. decoding is l
 let f(x) be our cipher function
 ```
 
-important to note that our internal implementation of `f(x)` is NOT pure (idempotent), it relies on random data (the seed can be predictable but we add a randomizing vector)
+important to note that our internal implementation of `f(x)` is NOT pure (idempotent), it relies on random data (the seed can be predictable but we add a randomizing vector.. what that means is, encoding a same string can produce different outputs)
 
 `let x = INPUT STRING`
 the core element now is the `DICTIONARY` and the `SOURCE_LIST`, it is just the list of characters you want to substitute the input with.
