@@ -100,9 +100,11 @@ where SHIFT_LIST_BY rotates the list by `quotient` places
 we will store the quotient in another list called `INDICES` (FORMAT_ID = I )`
 
 if `i` is even:
-`let NUM = SOURCE_LIST.indexOf(i) + (seed * ascii_sum * (index + 1))`
-`quotient,remainder = divmod(NUM,LENGTH(DICTIONARY))`
- `OUT+=SHIFT_LIST_BY(quotient,DICTIONARY)[remainder]`
+```
+let NUM = SOURCE_LIST.indexOf(i) + (seed * ascii_sum * (index + 1))
+quotient,remainder = divmod(NUM,LENGTH(DICTIONARY))
+OUT+=SHIFT_LIST_BY(quotient,DICTIONARY)[remainder]
+```
 again, we will add the quotient to our list of indices
 
 now that we have our seed, indices and encrypted chunk, we pack the data
