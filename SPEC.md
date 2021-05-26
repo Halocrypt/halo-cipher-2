@@ -78,7 +78,7 @@ now
 
 ```
 let i = index
-let L = X[L] // the letter
+let L = INPUT_STRING[L] // the letter
 ```
 
 if i is odd
